@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @person %>
+
+<div>
+  <%= link_to "Editar datos", edit_person_path(@person), class: "badge rounded-pill text-bg-warning" %> 
+</div>  
+<div>
+  <%= link_to "Regresar a pagina principal", people_path, class: "badge rounded-pill text-bg-info mt-3" %>
+</div> 
+<div>
+  <%= button_to "Eliminar Registro", @person, method: :delete, class: "badge rounded-pill text-bg-primary mt-3" %>
+</div>
+

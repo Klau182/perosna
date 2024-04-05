@@ -1,0 +1,10 @@
+<h1>Editar datos personales</h1>
+
+<%= render "form", person: @person %>
+
+<br>
+
+<div>
+  <%= link_to "Mostrar datos", @person, class: "badge rounded-pill text-bg-primary" %> 
+  <%= link_to "Volver a pagina principal", people_path, class: "badge rounded-pill text-bg-primary" %>
+</div>

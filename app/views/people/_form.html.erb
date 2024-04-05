@@ -1,0 +1,41 @@
+<%= form_with(model: person) do |form| %>
+  <% if person.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(person.errors.count, "Debe ingresar el dato solicitado") %></h2>
+
+      <ul>
+        <% person.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :Nombre, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+  <br>
+  <div>
+    <%= form.label "Fecha de nacimiento", style: "display: block" %>
+    <%= form.date_field :birthdate %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :genero, style: "display: block" %>
+    <%= form.select :gender, Person.genders.keys %>
+  </div>
+  <br>
+
+  <div>
+    <%= form.label :Pais, style: "display: block" %>
+    <%= form.text_field :country %>
+  </div>
+
+<br>
+
+  <div>
+    <%= form.submit "Guardar Datos" %>
+  </div>
+<br>
+<% end %>

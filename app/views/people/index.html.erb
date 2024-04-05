@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<div class= "container">
+  <h1>Personas</h1>
+
+  <div id="people">
+    <% @people.each do |person| %>
+      <div class="card-body">
+        <h5 class="card-title pt-5"><%= person.name  %><%= link_to "Ver mas...", person, class: "badge rounded-pill text-bg-info" %>                             </h5>
+      </div> 
+    <% end %>
+  </div>
+
+  <%= link_to "Crear nuevo registro", new_person_path, class: "btn btn-primary mt-5" %>
+</div>
